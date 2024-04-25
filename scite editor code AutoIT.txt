@@ -1,0 +1,19 @@
+ControlFocus("Open","","Edit1")
+Sleep(2000)
+ControlSetText("Open","","Edit1",$CmdLineRaw)
+Sleep(4000)
+ControlClick("Open","","Button1")
+
+ControlFocus("Open","","Edit1")
+Sleep(2000)
+ControlSetText("Open","","Edit1",$CmdLineRaw)
+Sleep(4000)
+Send("{ENTER}")
+
+
+
+ControlFocus("Open","","Edit1")
+ControlSetText("Open","","Edit1","C:\Users\sumit goyal\Downloads\Array Practice Questions.docx")
+ControlClick("Open","","Button1")
+
+

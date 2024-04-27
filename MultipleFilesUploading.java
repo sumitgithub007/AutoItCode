@@ -1,4 +1,4 @@
-package Demo;
+package restApi;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,24 +7,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+public class testnew {
 
-public class MultipleFilesUploading {
 
-	public static void main(String[] args) throws InterruptedException, IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
+		
+	//	use System.getProperty("user.dir"); donot hardcode
+	   String singleFile ="C:\\Users\\Sumit Goyal\\Downloads\\autoit\\Capture.png" ;
 
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\sumit goyal\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://demos.devexpress.com/ASPxFileManagerAndUploadDemos/UploadControl/MultiFileSelection.aspx");
 
 		
 		driver.manage().window().maximize();//maximizing window
-		Thread.sleep(4000);
-
+		 
 		driver.findElement(By.xpath("//td[@id='ContentHolder_UploadControl_Browse0']")).click();
 
-		String path = "C:\\Users\\sumit goyal\\Downloads\\autoIT";
+		String path = "C:\\Users\\Sumit Goyal\\Downloads\\autoit";
 
 		File directory = new File(path);
 
@@ -56,14 +56,13 @@ public class MultipleFilesUploading {
 		}
 		System.out.println(allimages);
 
-		Thread.sleep(3000);
+ 
+		Runtime.getRuntime().exec("C:\\Users\\sumit goyal\\Downloads\\pathfile.exe" + " " + path);
 
-		Runtime.getRuntime().exec("C:\\Users\\sumit goyal\\Downloads\\new.exe" + " " + path);
-
-		Thread.sleep(3000);
-
-		
-		Runtime.getRuntime().exec("C:\\Users\\select_clickAll.exe" + " " + allimages);
+		 Thread.sleep(7000);//Important to put
+	 	Runtime.getRuntime().exec("C:\\Users\\sumit goyal\\Downloads\\pathfile.exe" + " " + allimages);
 	}
-
+ 
+	
+	
 }
